@@ -10,7 +10,7 @@ pipeline {
         }
 
     stages {
-        stage($myName) {
+        stage('hello') {
             steps {
                 script {
                     sh ./test.sh $myName
