@@ -9,7 +9,11 @@ pipeline {
         stage('Hello') {
             steps {
                 script {
-                    sh './test.sh ${params.myName}'
+                sh script: '''
+                  #!/bin/bash
+                  cd /var/jenkins_home/workspace/hcmlabDeploy
+                  ./test.sh ${params.myName}
+                  '''
                 }
             }
         }
