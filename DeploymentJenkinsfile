@@ -10,7 +10,7 @@ pipeline {
         }
 
     stages {
-        stage('hello') {
+        stage($myName) {
             steps {
                 script {
                     sh '''
