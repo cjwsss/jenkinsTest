@@ -8,10 +8,11 @@ pipeline {
     stages {
         stage('hello') {
             steps {
+            def myName = ${params.myName}
                 script {
                     sh '''
                         #!/bin/bash
-                        ./test.sh 'cjw'
+                        ./test.sh myName
                     '''
                 }
             }
