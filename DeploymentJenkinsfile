@@ -1,0 +1,12 @@
+pipeline {
+       agent any
+       stages {
+              steps {
+	    dir('./') {
+		script {
+		      sh './test.sh'	
+		}
+	       }
+	}	              
+          }
+   }
