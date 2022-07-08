@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Hello') {
+        stage("${params.myName}") {
             steps {
                 sh './test.sh'
             }
