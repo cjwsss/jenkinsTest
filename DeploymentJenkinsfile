@@ -6,9 +6,9 @@ pipeline {
     }
 
     stages {
-        stage('"${params.myName}"') {
+        stage('hello') {
             steps {
-                sh 'echo "${params.myName}"'
+                echo "${params.myNam}"
             }
         }
     }
