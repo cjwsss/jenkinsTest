@@ -1,12 +1,17 @@
 pipeline {
-       agent any
-       stages {
-              steps {
-	    dir('./') {
-		script {
-		      sh './test.sh'	
-		}
-	       }
-	}	              
-          }
-   }
+    agent any
+
+    parameters {
+      string name: 'myName', trim: true
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                script {
+                    sh './test.sh ${params.myName}'
+                }
+            }
+        }
+    }
+}
