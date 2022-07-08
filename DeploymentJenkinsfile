@@ -11,7 +11,7 @@ pipeline {
                 script {
                     sh script: '''
                      #!/bin/bash
-                     if [[ true ]];
+                     if [ true ];
                      then
                      echo ${params.myName} success!!!
                      fi
