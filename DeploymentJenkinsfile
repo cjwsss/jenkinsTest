@@ -13,7 +13,7 @@ pipeline {
                     sh script: '''
                       #!/bin/bash
                       cd /var/jenkins_home/workspace/hcmlabDeploy
-                      ./test.sh ${params.myName}
+                      bash test.sh ${params.myName}
                       '''
                     }
                 }
