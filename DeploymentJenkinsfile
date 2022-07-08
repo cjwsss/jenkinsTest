@@ -2,18 +2,18 @@ pipeline {
     agent any
 
     parameters {
-      string name: 'myName', trim: true
+      string name: 'USERNAME', trim: true
     }
 
     environment {
-            username = "${params.myName}"
+            username = "${params.USERNAME}"
         }
 
     stages {
-        stage($myName) {
+        stage($USERNAME) {
             steps {
                 script {
-                    sh './test.sh $username'
+                    sh './test.sh USERNAME'
                 }
             }
         }
