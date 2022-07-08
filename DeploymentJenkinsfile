@@ -5,10 +5,13 @@ pipeline {
       string name: 'myName', trim: true
     }
 
+    environment {
+            myName = "$params.myName"
+        }
+
     stages {
         stage('hello') {
             steps {
-            def myName = ${params.myName}
                 script {
                     sh '''
                         #!/bin/bash
