@@ -11,7 +11,7 @@ pipeline {
                 script {
                     sh script: '''
                      #!/bin/bash
-                     ./test.sh ${params.myName}
+                     bash test.sh ${params.myName}
                      '''
                 }
             }
