@@ -13,7 +13,7 @@ pipeline {
         stage($myName) {
             steps {
                 script {
-                    sh './test.sh username'
+                    sh './test.sh $username'
                 }
             }
         }
