@@ -9,13 +9,7 @@ pipeline {
         stage('Hello') {
             steps {
                 script {
-                    sh script: '''
-                     #!/bin/bash
-                     if [ true ];
-                     then
-                     echo ${params.myName} success!!!
-                     fi
-                     '''
+                    sh  echo ${params.myName} success!!!
                 }
             }
         }
