@@ -5,23 +5,23 @@ pipeline {
            string(name: 'MANAGEMENT_URL', defaultValue: 'https://apimgmt25-mgsvc.hcm.ondemand.com', description: 'apigee api management_url', trim: true)
            string(name: 'ORGANIZATION', description: 'apigee organization name', trim: true)
            string(name: 'ENVIRONMENT', description: 'apigee proxy deploy environment', trim: true)
-           string(name: 'USERNAME', description: 'apigee username', trim: true)
-           password(name: 'PASSWORD', defaultValue: '', description: 'apigee password')
+           string(name: 'APIGEE_USERNAME', description: 'apigee username', trim: true)
+           password(name: 'APIGEE_PASSWORD', defaultValue: '', description: 'apigee password')
        }
 
    environment {
        url = "${params.MANAGEMENT_URL}"
        org = "${params.ORGANIZATION}"
        env = "${params.ENVIRONMENT}"
-       username = "${params.USERNAME}"
-       password = "${params.PASSWORD}"
+       username = "${params.APIGEE_USERNAME}"
+       password = "${params.APIGEE_PASSWORD}"
    }
 
     stages {
         stage($USERNAME) {
             steps {
                 script {
-                    sh './test.sh $username $password'
+                    sh './test.sh $url $org $env $username $password'
                 }
             }
         }
