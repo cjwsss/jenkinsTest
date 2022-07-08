@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-            myName = "$params.myName"
+            myName = "${params.myName}"
         }
 
     stages {
@@ -15,7 +15,7 @@ pipeline {
                 script {
                     sh '''
                         #!/bin/bash
-                        ./test.sh myName
+                        ./test.sh $myName
                     '''
                 }
             }
