@@ -8,7 +8,12 @@ pipeline {
     stages {
         stage('hello') {
             steps {
-                echo "${params.myName}"
+                script {
+                    sh '''
+                        #!/bin/bash
+                        ./test.sh
+                    '''
+                }
             }
         }
     }
