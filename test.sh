@@ -1,1 +1,4 @@
-echo 1
+if [[ true ]];
+then
+echo $1 success!!!!
+fi
