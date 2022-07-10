@@ -21,7 +21,7 @@ pipeline {
         stage($USERNAME) {
             steps {
                 script {
-                    sh './test.sh $url $org $env $username $password'
+                    sh 'sudo test.sh $url $org $env $username $password'
                 }
             }
         }
