@@ -20,7 +20,7 @@ pipeline {
     stages {
         stage($USERNAME) {
             steps {
-                dir(./){
+                dir('./'){
                     script {
                         sh 'chmod 777 test.sh'
                         sh './test.sh $url $org $env $username $password'
