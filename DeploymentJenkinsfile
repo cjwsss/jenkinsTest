@@ -14,7 +14,7 @@ pipeline {
        org = "${params.ORGANIZATION}"
        env = "${params.ENVIRONMENT}"
        username = "${params.APIGEE_USERNAME}"
-       password = credentials('params.APIGEE_PASSWORD')
+       password = credentials('APIGEE_PASSWORD')
    }
 
     stages {
